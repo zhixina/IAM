@@ -1,0 +1,48 @@
+YOLO:
+    weights: '/content/drive/MyDrive/yolo_weights.h5'
+    table: 'txt.names'
+    train:
+        batch_size: 32
+        img_path: './forms'
+        imput_size: [640,480]
+        tiny: True
+    predict:
+        iou_threshold: 0.3
+        score_threshold: 0.25
+
+CRNN:
+    dataset_builder: &ds_builder
+        wordsimg_path: './words'
+        table: 'char.names'
+        input_size: [28, null, 3]
+        words_path: 'words.txt'
+        num: 1000
+
+
+    weights: '/content/drive/MyDrive/crnn_weights.h5'
+    train:
+        dataset_builder:
+            <<: *ds_builder
+
+        valid_slipt: 0.4
+        batch_size: 8
+        learning_rate: 0.0001
+        epochs: 100
+
+        reduce_lr:
+            factor: 0.5
+            patience: 2
+            min_lr: 0.0001
+            cooldown: 2
+            verbose: 1
+
+        tensorboard:
+            histogram_freq: 1
+            profile_batch: 0
+YOLO_CRNN:
+    file_path: "./forms"
+    predict:
+        iou_threshold: 0.3
+        score_threshold: 0.25
+        yolo_plot: False
+        crnn_plot: False
