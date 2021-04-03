@@ -1,6 +1,6 @@
 YOLO:
-    weights: '/content/drive/MyDrive/yolo_weights.h5'
-    table: 'txt.names'
+    weights: '/content/yolo-crnn/yolo_weights.h5'
+    table: '/content/yolo-crnn/txt.names'
     train:
         batch_size: 32
         img_path: './forms'
@@ -13,13 +13,13 @@ YOLO:
 CRNN:
     dataset_builder: &ds_builder
         wordsimg_path: './words'
-        table: 'char.names'
+        table: '/content/yolo-crnn/char.names'
         input_size: [28, null, 3]
         words_path: 'words.txt'
         num: 1000
 
 
-    weights: '/content/drive/MyDrive/crnn_weights.h5'
+    weights: '/content/yolo-crnn/crnn_weights.h5'
     train:
         dataset_builder:
             <<: *ds_builder
