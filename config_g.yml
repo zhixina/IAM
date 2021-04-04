@@ -9,7 +9,7 @@ YOLO:
         reduce_lr:
             factor: 0.5
             patience: 2
-            min_lr: 0.0001
+            min_lr: 0.01
             cooldown: 2
             verbose: 1
 
