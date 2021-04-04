@@ -15,6 +15,7 @@ YOLO:
             verbose: 1
 
         tensorboard:
+            update_freq: 'batch'
             histogram_freq: 1
             profile_batch: 0
     predict:
