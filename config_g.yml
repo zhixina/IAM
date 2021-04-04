@@ -6,6 +6,16 @@ YOLO:
         img_path: './forms'
         imput_size: [640,480]
         tiny: True
+        reduce_lr:
+            factor: 0.5
+            patience: 2
+            min_lr: 0.0001
+            cooldown: 2
+            verbose: 1
+
+        tensorboard:
+            histogram_freq: 1
+            profile_batch: 0
     predict:
         iou_threshold: 0.3
         score_threshold: 0.25
