@@ -2,7 +2,7 @@ YOLO:
     weights: 
     table: '/content/yolo-crnn/txt.names'
     train:
-        batch_size: 32
+        batch_size: 8
         img_path: './forms'
         imput_size: [640,480] #[w,h]
         tiny: False
@@ -50,6 +50,7 @@ CRNN:
             verbose: 1
 
         tensorboard:
+            update_freq: 'batch'
             histogram_freq: 1
             profile_batch: 0
 YOLO_CRNN:
