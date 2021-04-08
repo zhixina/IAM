@@ -1,11 +1,11 @@
 YOLO:
-    weights: '/content/yolo-crnn/yolo_weights.h5'
+    weights: 
     table: '/content/yolo-crnn/txt.names'
     train:
         batch_size: 32
         img_path: './forms'
         imput_size: [640,480] #[w,h]
-        tiny: True
+        tiny: False
         reduce_lr:
             monitor: 'loss'
             factor: 0.5
