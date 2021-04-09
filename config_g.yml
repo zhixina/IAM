@@ -24,14 +24,12 @@ YOLO:
 
 CRNN:
     dataset_builder: &ds_builder
-        wordsimg_path: './words'
         table: '/content/yolo-crnn/char.names'
         input_size: [28, null, 3]
-        words_path: 'words.txt'
-        num: 1000
 
 
-    weights: '/content/yolo-crnn/crnn_weights.h5'
+
+    weights: '/content/drive/MyDrive/crnn_weights_20210409-025337.h5'
     train:
         dataset_builder:
             <<: *ds_builder
