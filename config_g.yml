@@ -15,7 +15,7 @@ YOLO:
             verbose: 1
 
         tensorboard:
-            update_freq: 'batch'
+            update_freq: 1
             histogram_freq: 1
             profile_batch: 0
     predict:
@@ -48,7 +48,7 @@ CRNN:
             verbose: 1
 
         tensorboard:
-            update_freq: 'batch'
+            update_freq: 1
             histogram_freq: 1
             profile_batch: 0
 YOLO_CRNN:
